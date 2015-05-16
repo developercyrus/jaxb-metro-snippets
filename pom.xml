@@ -7,7 +7,8 @@
         Comment:
         1.  in example2, the steps are in this sequence: 1. jaxb object > 2. DOM object > 3. soap request > 4. soap response > 5. DOM object > 6. jaxb object
             although maven-jaxb2-plugin can allow to generate jaxb object (1, 6) by jaxb from wsdl file (not live URL!), you 
-            have to construct soap request (2, 3) and extract soap response (4, 5) by yourself.                                     
+            have to construct soap request (2, 3) and extract soap response (4, 5) by yourself. 
+            soap client, reference: https://github.com/developercyrus/saaj-metro-snippets                                    
         2.  In 3 and 4, the soap body must involve namespace, therefore the dom object attached/ extracted in 2, 5 must 
             be involved with namespace, and in turn, the jaxb object in 1 and 6 must be generated with namespace (able to do by extra arg -npa)
         3.  unlike example1 tweaking by annotation, the generated jaxb in example2 from wsdl already comes with @XmlRootElement, which allows cleaner code to marshall/ unmarshall
